@@ -66,8 +66,8 @@ const checkWinner=()=>{
 }
 function resetgame() {
    player0=true;
-   enable_boxes();
    count=0;
+   enable_boxes();
    document.querySelector(".msg-container").classList.add("hide");  
   } 
 document.querySelector("#reset").addEventListener("click", resetgame);
