@@ -5,4 +5,4 @@ Features:
 2.Simple, responsive UI
 3.Game reset with one click
 4.Highlight winning combinations
-ULR: https://jaswitha-athipatla.github.io/My-first-project/
+ULR:https://jaswitha-athipatla.github.io/tic-tac-toe/
