@@ -46,7 +46,7 @@ boxes.forEach((box)=>{
     box.disabled=true;
     count++;
     let win=checkWinner();
-    if(count==9 && !win){
+    if(count===9 && !win){
             msg.innerHTML="Game Over!No winner in game try again";
             document.querySelector(".msg-container").classList.remove("hide");
          }
