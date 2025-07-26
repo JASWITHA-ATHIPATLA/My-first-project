@@ -79,4 +79,5 @@ return false;
 }
 
 document.querySelector("#reset").addEventListener("click", resetgame);
+window.addEventListener("load", resetgame);
  
