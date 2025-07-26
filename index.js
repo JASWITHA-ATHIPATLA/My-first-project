@@ -52,7 +52,7 @@ boxes.forEach((box)=>{
     count++;
     let win=checkWinner();
     if(count===9 && !win){
-            msg.innerHTML="Game Over!No winner in game try again";
+            msg.textContent ="Game Over!No winner in game try again";
             document.querySelector(".msg-container").classList.remove("hide");
             disable_boxes();
          }
@@ -69,7 +69,7 @@ const checkWinner=()=>{
     let pos2=boxes[pattern[1]].innerText;
     let pos3=boxes[pattern[2]].innerText;
     if(pos1!="" && pos2!="" && pos3!=""){
-       if(pos1===pos2 && pos2===pos3){
+       if(pos1 && pos2 && pos3 && pos1===pos2 && pos2===pos3){
          printwinner(pos1);
          return true; 
        }
@@ -79,5 +79,4 @@ return false;
 }
 
 document.querySelector("#reset").addEventListener("click", resetgame);
-window.addEventListener("load", resetgame);
  
