@@ -14,6 +14,12 @@ const winning_pattern=[
       [1,4,7],
       [2,4,6]
 ];
+function resetgame() {
+   player0=true;
+   count = 0;
+   enable_boxes();
+   document.querySelector(".msg-container").classList.add("hide");  
+  } 
 const disable_boxes=()=>{
    for(let box of boxes){
       box.disabled=true;
@@ -22,7 +28,7 @@ const disable_boxes=()=>{
 const enable_boxes=()=>{
    for(let box of boxes){
       box.disabled=false;
-      box.innerHTML="";
+      box.innerText="";
    }
 }
 boxes.forEach((box)=>{
@@ -39,9 +45,9 @@ boxes.forEach((box)=>{
     }
     box.disabled=true;
     count++;
-    checkWinner();
-    if(count==9){
-            msg.innerHTML="Game Over!No winner in game";
+    let win=checkWinner();
+    if(count==9 && !win){
+            msg.innerHTML="Game Over!No winner in game try again";
             document.querySelector(".msg-container").classList.remove("hide");
          }
    })
@@ -59,16 +65,12 @@ const checkWinner=()=>{
     if(pos1!="" && pos2!="" && pos3!=""){
        if(pos1===pos2 && pos2===pos3){
          printwinner(pos1);
+         return true; 
        }
-      return true; 
     }  
 }
 return false;
 }
-function resetgame() {
-   player0=true;
-   enable_boxes();
-   document.querySelector(".msg-container").classList.add("hide");  
-  } 
+
 document.querySelector("#reset").addEventListener("click", resetgame);
  
