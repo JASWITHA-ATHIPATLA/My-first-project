@@ -6,6 +6,7 @@ body{
  background-color: rgb(196, 255, 207);
  text-align: center;
 }
+
 .container{
  height: 70vh;
  display: flex;
@@ -39,7 +40,7 @@ body{
  border-radius: 1vmin;
 }
 .msg-container{
- height:10vmin;
+ height:30vmin;
 }
 .hide{
  display: none;

@@ -3,7 +3,7 @@ let boxes=document.querySelectorAll(".box");
 let resetbtn=document.querySelector("#reset");
 let msg=document.querySelector(".message");
 let player0=true;
-var count=0;
+let count=0;
 const winning_pattern=[
       [0,1,2],
       [0,4,8],
@@ -60,13 +60,13 @@ const checkWinner=()=>{
        if(pos1===pos2 && pos2===pos3){
          printwinner(pos1);
        }
-       
+      return true; 
     }  
 }
+return false;
 }
 function resetgame() {
    player0=true;
-   count=0;
    enable_boxes();
    document.querySelector(".msg-container").classList.add("hide");  
   } 
