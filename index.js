@@ -18,7 +18,12 @@ function resetgame() {
    player0=true;
    count = 0;
    enable_boxes();
-   document.querySelector(".msg-container").classList.add("hide");  
+   document.querySelector(".msg-container").classList.add("hide");
+    boxes.forEach(box => {
+        box.innerText = "";
+        box.style.color = "";
+        box.disabled = false; 
+    });
   } 
 const disable_boxes=()=>{
    for(let box of boxes){
@@ -49,6 +54,7 @@ boxes.forEach((box)=>{
     if(count===9 && !win){
             msg.innerHTML="Game Over!No winner in game try again";
             document.querySelector(".msg-container").classList.remove("hide");
+            disable_boxes();
          }
    })
 })
